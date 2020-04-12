@@ -1,0 +1,25 @@
+{
+  "name": "mvc-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PanahovKh/MVC--project.git"
+  },
+  "author": "Kh.Panahov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PanahovKh/MVC--project/issues"
+  },
+  "homepage": "https://github.com/PanahovKh/MVC--project#readme",
+  "Dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-less": "^4.0.1",
+    "gulp-csso": "^4.0.1",
+    "gulp-concat": "^2.6.1"
+  }
+}
