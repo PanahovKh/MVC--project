@@ -1,6 +1,6 @@
-function Controller(view, model) {
-    this.model = model;
-    this.view = view;
-}
+// function Controller(view, model) {
+//     this.model = model;
+//     this.view = view;
+// }
 
-module.exports = Controller;
+// module.exports = Controller;

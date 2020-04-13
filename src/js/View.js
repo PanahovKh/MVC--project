@@ -1,5 +1,7 @@
-function View() {
+// function View() {
 
-}
+// }
+// module.exports = View;
 
-module.exports = View;
+
+    

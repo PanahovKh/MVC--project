@@ -1,5 +1,5 @@
-function Model() {
+// function Model() {
 
-}
+// }
 
-module.exports = Model;
+// module.exports = Model;
