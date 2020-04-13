@@ -52,7 +52,7 @@
   color: red;
 }
 #container-first__form-input input,
-#message {
+#list {
   margin-bottom: 10px;
   width: 100%;
   padding: 10px 2%;
@@ -64,10 +64,10 @@
   overflow: auto;
 }
 #container-first__form-input input:focus,
-#message:focus {
+#list:focus {
   border-color: #333333;
 }
-#message {
+#list {
   height: 15.2em;
 }
 .btn {

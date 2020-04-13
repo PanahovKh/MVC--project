@@ -83,7 +83,7 @@ findDiv.title = 'вы можете найти тут свою имя';
 formTag_1.appendChild(findDiv);
 
 const textarea = document.createElement('div');
-textarea.setAttribute('id', 'message');
+textarea.setAttribute('id', 'list');
 textarea.name = 'message';
 textarea.placeholder = 'Имя Фамилия Возрост';
 formTag_1.appendChild(textarea);
@@ -156,51 +156,39 @@ findDiv_1.textContent = ' Результат поиска';
 formTag_3.appendChild(findDiv_1);
 
 const textarea_1 = document.createElement('div');
-textarea_1.setAttribute('id', 'message');
+textarea_1.setAttribute('id', 'list');
 textarea_1.name = 'message';
 textarea_1.placeholder = 'Имя Фамилия Возрост';
 formTag_3.appendChild(textarea_1);
 
 
 
+//--------------------------------------------------------------------------------
+
+
+var people = [];
+
 function sendName() {
-    let sName = document.getElementById('name').value;  
+    let sName = document.getElementById('name').value;
     let sSurname = document.getElementById('surname').value;
     let sAge = document.getElementById('age').value;
+    let p = {
+        name: sName,
+        surname: sSurname,
+        age: sAge
+    };
+    people.push(p);
+    
+    let numberOfListItems = people.length;
 
-    let concatt = sName + ' ' + sSurname + ' ' + sAge + '<br>' ;
-    let oldValue = document.getElementById('message').innerHTML;
-    let newValue = concatt + oldValue;
-    document.getElementById('message').innerHTML = newValue;
-}
-
-
-
-// var people = [];
-
-//     function sendName() {
-//       let sName = document.getElementById('name').value;
-//       let sSurname = document.getElementById('surname').value;
-//       let sAge = document.getElementById('age').value;
-//       let p = {
-//         name: sName,
-//         surname: sSurname,
-//         age: sAge,
-//       };
-
-//       //console.log(p);
-//       people.push(p);
-//       console.log(people); 
-//     let oldValue = document.getElementById('message').innerHTML;
-//     let newValue = people.forEach(e) + oldValue;
-
-//     document.getElementById('message').innerHTML = newValue;
-//     }
-
-
-
-
-
+    for (i = 0; i < numberOfListItems; ++i) {
+        oldlist = document.getElementById('list');
+        olddata = document.getElementById('list').innerHTML;
+        let newlist = olddata + '<li>' + people[i].name + ' ' + people[i].surname  + ' ' +  people[i].age + '</li>';
+    
+        oldlist.innerHTML =  newlist;
+    };
+};
 
 
 
