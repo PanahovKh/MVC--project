@@ -15,11 +15,11 @@ const root = document.querySelector('div#root');
 
 //first form--------------------------------------------------------
 const div = document.createElement('div');
-div.setAttribute('class', 'container-first')
+div.setAttribute('class', 'container-first3')
 root.appendChild(div);
 
 const formTag = document.createElement('form');
-formTag.setAttribute('id','container-first__form-input')
+formTag.setAttribute('id','container-first__form-input1')
 div.appendChild(formTag);
 
 const RegDiv = document.createElement('div');
@@ -73,7 +73,7 @@ formTag.appendChild(btnDiv);
 
 //first-page_second form------------------------------------------------
 const formTag_1 = document.createElement('form');
-formTag_1.setAttribute('id','container-first__form-input')
+formTag_1.setAttribute('id','container-first__form-input2')
 div.appendChild(formTag_1);
 
 const findDiv = document.createElement('div');
@@ -83,10 +83,14 @@ findDiv.title = 'вы можете найти тут свою имя';
 formTag_1.appendChild(findDiv);
 
 const textarea = document.createElement('div');
-textarea.setAttribute('id', 'list');
+textarea.setAttribute('id', 'message');
 textarea.name = 'message';
 textarea.placeholder = 'Имя Фамилия Возрост';
 formTag_1.appendChild(textarea);
+
+const list = document.createElement('ul');
+list.setAttribute('id', 'list');
+textarea.appendChild(list);
 
 //second page -------------------------------------------------
 const div_1 = document.createElement('div');
@@ -94,7 +98,7 @@ div_1.setAttribute('class', 'container-second');
 root.appendChild(div_1);
 
 const formTag_2 = document.createElement('form');
-formTag_2.setAttribute('id','container-first__form-input');
+formTag_2.setAttribute('id','container-first__form-input3');
 div_1.appendChild(formTag_2);
 
 const RegDiv_1 = document.createElement('div');
@@ -104,35 +108,35 @@ RegDiv_1.textContent = 'поиск человека !';
 formTag_2.appendChild(RegDiv_1);
 
 const lebel_3 = document.createElement('label');
-lebel_3.setAttribute('for', 'nname');
+lebel_3.setAttribute('for', 'names');
 lebel_3.innerHTML = 'Имя<span>*</span>';
 formTag_2.appendChild(lebel_3);
 
 const input_3 = document.createElement('input');
-input_3.setAttribute('id', 'nname');
+input_3.setAttribute('id', 'names');
 input_3.setAttribute('name','name');
 input_3.setAttribute('type', 'text');
 input_3.placeholder = 'Введите имя';
 formTag_2.appendChild(input_3);
 
 const lebel_4 = document.createElement('label');
-lebel_4.setAttribute('for', 'ssurname');
+lebel_4.setAttribute('for', 'surnames');
 lebel_4.innerHTML = 'Фамилия <span>*</span>';
 formTag_2.appendChild(lebel_4);
 
 const input_4 = document.createElement('input');
-input_4.setAttribute('id', 'ssurname');
+input_4.setAttribute('id', 'surnames');
 input_4.setAttribute('type', 'text');
 input_4.placeholder = 'Введите Фамилию';
 formTag_2.appendChild(input_4);
 
 const lebel_5 = document.createElement('label');
-lebel_5.setAttribute('for', 'aage');
+lebel_5.setAttribute('for', 'ages');
 lebel_5.innerHTML = 'Возрост <span>*</span>';
 formTag_2.appendChild(lebel_5);
 
 const input_5 = document.createElement('input');
-input_5.setAttribute('id', 'aage');
+input_5.setAttribute('id', 'ages');
 input_5.setAttribute('type', 'number');
 input_5.placeholder = 'Введите Возрост';
 input_5.min = '1';
@@ -140,13 +144,14 @@ input_5.max = '100';
 formTag_2.appendChild(input_5);
 
 const btnDiv_1 = document.createElement('div');
+btnDiv_1.setAttribute('onclick', 'searchName()');
 btnDiv_1.setAttribute('class', 'btn');
 btnDiv_1.textContent = 'Поиск';
 formTag_2.appendChild(btnDiv_1);
 
 //second-page_second-form-------------------------------
 const formTag_3 = document.createElement('form');
-formTag_3.setAttribute('id','container-first__form-input')
+formTag_3.setAttribute('id','container-first__form-input4')
 div_1.appendChild(formTag_3);
 
 const findDiv_1 = document.createElement('div');
@@ -156,10 +161,14 @@ findDiv_1.textContent = ' Результат поиска';
 formTag_3.appendChild(findDiv_1);
 
 const textarea_1 = document.createElement('div');
-textarea_1.setAttribute('id', 'list');
+textarea_1.setAttribute('id', 'message');
 textarea_1.name = 'message';
 textarea_1.placeholder = 'Имя Фамилия Возрост';
 formTag_3.appendChild(textarea_1);
+
+const list_1 = document.createElement('ul');
+list_1.setAttribute('id', 'list2')
+textarea_1.appendChild(list_1);
 
 
 
@@ -169,31 +178,58 @@ formTag_3.appendChild(textarea_1);
 var people = [];
 
 function sendName() {
-    let sName = document.getElementById('name').value;
-    let sSurname = document.getElementById('surname').value;
-    let sAge = document.getElementById('age').value;
-    let p = {
-        name: sName,
-        surname: sSurname,
-        age: sAge
-    };
+    var sName = document.getElementById('name').value;
+    var sSurname = document.getElementById('surname').value;
+    var sAge = document.getElementById('age').value;
+    if (!((sName === "") && (sSurname === "") && (sAge === ""))) {
+        var p = {
+            name: sName,
+            surname: sSurname,
+            age: sAge, 
+        };
     people.push(p);
     
-    let numberOfListItems = people.length;
-
-    for (i = 0; i < numberOfListItems; ++i) {
-        oldlist = document.getElementById('list');
-        olddata = document.getElementById('list').innerHTML;
-        let newlist = olddata + '<li>' + people[i].name + ' ' + people[i].surname  + ' ' +  people[i].age + '</li>';
-    
-        oldlist.innerHTML =  newlist;
+    for (i = 0; i < people.length; i++) {
+        let oldlist = document.getElementById('list');
+    for (i = 0; i < people.length; i++) {
+        var newlist = document.getElementById('list').innerHTML;
+        var newlist = newlist + "<li>" + people[i].name + " " + people[i].surname  + " " +  people[i].age + "</li>";
     };
+    oldlist.innerHTML =  newlist;
+    };
+  };
 };
 
 
+function searchName() {
+    var sNames = document.getElementById('names').value;
+    var sSurnames = document.getElementById('surnames').value;
+    var sAges = document.getElementById('ages').value;
+    
 
+    var resmassiv = [];
 
+    for (var i = 0; i < people.length; i++) {
+        if ((people[i].name === sNames && sNames !== "") || (people[i].surname === sSurnames && sSurnames !== "") || (people[i].age === sAges && sAges !== "")) {
+            var newarray = {
+                name: people[i].name,
+                surname: people[i].surname,
+                age: people[i].age,
+            } 
+        resmassiv.push(newarray);
+        };
+    };
 
-
-
-
+        document.getElementById('list2').innerHTML = "";
+        var resultObject = resmassiv;
+        searchList = resultObject.length;
+        for (y = 0; y < searchList; y++) {
+    
+            oldlistsearch = document.getElementById('list2');
+            for (y = 0; y < searchList; y++) {
+                var newlistsearch = document.getElementById('list2').innerHTML;
+                var newlistsearch = newlistsearch + "<li>" + resultObject[y].name + " " + resultObject[y].surname + " " + resultObject[y].age + "</li>";
+            oldlistsearch.innerHTML = newlistsearch;
+        };
+     };
+    };
