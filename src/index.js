@@ -19,7 +19,7 @@ div.setAttribute('class', 'container-first3')
 root.appendChild(div);
 
 const formTag = document.createElement('form');
-formTag.setAttribute('id','container-first__form-input1')
+formTag.setAttribute('id','container-first__form-input')
 div.appendChild(formTag);
 
 const RegDiv = document.createElement('div');
@@ -73,7 +73,7 @@ formTag.appendChild(btnDiv);
 
 //first-page_second form------------------------------------------------
 const formTag_1 = document.createElement('form');
-formTag_1.setAttribute('id','container-first__form-input2')
+formTag_1.setAttribute('id','container-first__form-input')
 div.appendChild(formTag_1);
 
 const findDiv = document.createElement('div');
@@ -98,7 +98,7 @@ div_1.setAttribute('class', 'container-second');
 root.appendChild(div_1);
 
 const formTag_2 = document.createElement('form');
-formTag_2.setAttribute('id','container-first__form-input3');
+formTag_2.setAttribute('id','container-first__form-input');
 div_1.appendChild(formTag_2);
 
 const RegDiv_1 = document.createElement('div');
@@ -151,7 +151,7 @@ formTag_2.appendChild(btnDiv_1);
 
 //second-page_second-form-------------------------------
 const formTag_3 = document.createElement('form');
-formTag_3.setAttribute('id','container-first__form-input4')
+formTag_3.setAttribute('id','container-first__form-input')
 div_1.appendChild(formTag_3);
 
 const findDiv_1 = document.createElement('div');
@@ -227,8 +227,8 @@ function searchName() {
     
             oldlistsearch = document.getElementById('list2');
             for (y = 0; y < searchList; y++) {
-                var newlistsearch = document.getElementById('list2').innerHTML;
-                var newlistsearch = newlistsearch + "<li>" + resultObject[y].name + " " + resultObject[y].surname + " " + resultObject[y].age + "</li>";
+                var newlistsearchh = document.getElementById('list2').innerHTML;
+                var newlistsearch = newlistsearchh + "<li>" + resultObject[y].name + " " + resultObject[y].surname + " " + resultObject[y].age + "</li>";
             oldlistsearch.innerHTML = newlistsearch;
         };
      };
